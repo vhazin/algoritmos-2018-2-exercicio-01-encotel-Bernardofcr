@@ -8,46 +8,44 @@
 
 #include <stdio.h>
 int main(void) {
-    char telefone[40];
+    char telefone[31]="";
+    char numero[31]="";
     int i;
-    printf("Digite o número de telefone usando codigo de characteres: ");
+    //printf("ENTRADA:\n");
     while (scanf("%s", telefone)!=EOF){
         i=0;
-        printf("\nO telefone em código numérico é: \n");
         while (telefone[i]!='\0'){
             if (telefone[i]=='1'||telefone[i]=='0'||telefone[i]=='-'){
-                printf("%c",telefone[i]);
+                numero[i]=telefone[i];
             }
-            if (telefone[i]>='A' && telefone[i]<='C'){
-                printf("2");
+            else if (telefone[i]>='A' && telefone[i]<='C'){
+                numero[i]=('2');
             }
-            if (telefone[i]>='D' && telefone[i]<='F'){
-                printf("3");
+            else if (telefone[i]>='D' && telefone[i]<='F'){
+                numero[i]=('3');
             }
-            if (telefone[i]>='G'&& telefone[i]<='I'){
-                printf("4");
+            else if (telefone[i]>='G'&& telefone[i]<='I'){
+                numero[i]=('4');
             }
-            if (telefone[i]>='J' && telefone[i]<='L'){
-                printf("5");
+            else if (telefone[i]>='J' && telefone[i]<='L'){
+                numero[i]=('5');
             }
-            if (telefone[i]>='M' && telefone[i]<='O'){
-                printf("6");
+            else if (telefone[i]>='M' && telefone[i]<='O'){
+                numero[i]=('6');
             }
-            if (telefone[i]>='P' && telefone[i]<='S'){
-                printf("7");
+            else if (telefone[i]>='P' && telefone[i]<='S'){
+                numero[i]=('7');
             }
-            if (telefone[i]>='T' && telefone[i]<='V'){
-                printf("8");
+            else if (telefone[i]>='T' && telefone[i]<='V'){
+                numero[i]=('8');
             }
-            if (telefone[i]>='W' && telefone[i]<='Z'){
-                printf("9");
+            else if (telefone[i]>='W' && telefone[i]<='Z'){
+                numero[i]=('9');
             }
-            i=i+1;
+            i++;
         }
-        printf("\n");
-        printf("\n");
+        numero[i]=('\0');
+        printf("\n%s",numero);
     }
-    printf("\n");
-    
     return 0;
 }
